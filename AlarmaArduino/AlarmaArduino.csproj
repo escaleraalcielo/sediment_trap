@@ -24,7 +24,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <TargetCulture>es-MX</TargetCulture>
     <PublisherName>Daniel Martínez</PublisherName>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -50,16 +50,28 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>A6AE0DD429CB3FE48F04F55BAFEBECE23531E202</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>31456EC40A58CA34D84865CC60EDC499E6D25E0A</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>AlarmaArduino_ClaveTemporal.pfx</ManifestKeyFile>
+    <ManifestKeyFile>AlarmaArduino_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>false</SignManifests>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>1467868799_anchor.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -105,7 +117,7 @@
       <DependentUpon>ImpresionFechas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -114,7 +126,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="..\..\..\..\..\..\Documents\Arduino\Trampa_VM\Trampa_VM.ino">
+      <Link>Trampa_VM.ino</Link>
+    </None>
+    <None Include="..\..\..\Leer_fecha_Julio_2016\Leer_fecha_Julio_2016.ino">
+      <Link>Leer_fecha_Julio_2016.ino</Link>
+    </None>
+    <None Include="..\..\..\Leer_Fecha_Junio_2016\Leer_Fecha_Junio_2016.ino">
+      <Link>Leer_Fecha_Junio_2016.ino</Link>
+    </None>
     <None Include="AlarmaArduino_ClaveTemporal.pfx" />
+    <None Include="AlarmaArduino_TemporaryKey.pfx" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -183,6 +206,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="img\ic_warning_amber_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="1467868799_anchor.ico" />
+    <None Include="img\ok_png.png" />
+    <None Include="img\1467875157_Stop1NormalRed.png" />
+    <None Include="img\1467871449_arrows-29.png" />
+    <None Include="img\1467871276_arrows-29.png" />
+    <None Include="bin\Debug\logfile.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

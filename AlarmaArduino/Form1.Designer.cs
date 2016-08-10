@@ -71,8 +71,16 @@ namespace AlarmaArduino
 
         private System.Windows.Forms.Label fecha;
         private System.Windows.Forms.Label label_connect;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label1_1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
@@ -83,16 +91,8 @@ namespace AlarmaArduino
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lbl_fechas;
         private System.Windows.Forms.Label reloj;
 
@@ -315,15 +315,19 @@ namespace AlarmaArduino
             this.lbl_fechas = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.btnSyncDate = new System.Windows.Forms.Button();
             this.inputSerial = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btn_start = new System.Windows.Forms.Button();
-            this.btn_stop = new System.Windows.Forms.Button();
-            this.PosAct = new System.Windows.Forms.NumericUpDown();
-            this.label22 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.tb_pos_act = new System.Windows.Forms.TextBox();
+            this.cb_pos_ok = new System.Windows.Forms.CheckBox();
             this.PosDes = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
+            this.PosAct = new System.Windows.Forms.NumericUpDown();
+            this.label22 = new System.Windows.Forms.Label();
+            this.btn_start = new System.Windows.Forms.Button();
+            this.btn_stop = new System.Windows.Forms.Button();
+            this.listBox2 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -355,8 +359,8 @@ namespace AlarmaArduino
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PosAct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PosDes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PosAct)).BeginInit();
             this.SuspendLayout();
             // 
             // Conectar
@@ -414,14 +418,14 @@ namespace AlarmaArduino
             this.label1_1.AutoSize = true;
             this.label1_1.Location = new System.Drawing.Point(30, 18);
             this.label1_1.Name = "label1_1";
-            this.label1_1.Size = new System.Drawing.Size(109, 13);
+            this.label1_1.Size = new System.Drawing.Size(115, 13);
             this.label1_1.TabIndex = 10;
             this.label1_1.Text = "Cantidad de muestras";
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::SedimentTrap.Properties.Resources.icml;
-            this.pictureBox2.Location = new System.Drawing.Point(636, 10);
+            this.pictureBox2.Location = new System.Drawing.Point(740, 33);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(129, 128);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -431,7 +435,7 @@ namespace AlarmaArduino
             // pictureBox1
             // 
             this.pictureBox1.Image = global::SedimentTrap.Properties.Resources.ic_error_red_48dp;
-            this.pictureBox1.Location = new System.Drawing.Point(9, 23);
+            this.pictureBox1.Location = new System.Drawing.Point(4, 33);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(48, 48);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -444,7 +448,7 @@ namespace AlarmaArduino
             this.dddToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(947, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(956, 24);
             this.menuStrip1.TabIndex = 13;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -488,7 +492,7 @@ namespace AlarmaArduino
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Location = new System.Drawing.Point(3, 29);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(201, 13);
+            this.linkLabel1.Size = new System.Drawing.Size(208, 13);
             this.linkLabel1.TabIndex = 16;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "¿Qué puerto asigna Windows a Arduino?";
@@ -501,9 +505,9 @@ namespace AlarmaArduino
             this.panel_config.Controls.Add(this.comboBox1);
             this.panel_config.Controls.Add(this.Conectar);
             this.panel_config.Controls.Add(this.Desconectar);
-            this.panel_config.Location = new System.Drawing.Point(117, 70);
+            this.panel_config.Location = new System.Drawing.Point(76, 87);
             this.panel_config.Name = "panel_config";
-            this.panel_config.Size = new System.Drawing.Size(208, 68);
+            this.panel_config.Size = new System.Drawing.Size(213, 68);
             this.panel_config.TabIndex = 26;
             // 
             // panel3
@@ -522,7 +526,7 @@ namespace AlarmaArduino
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(22, 6);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 86;
             this.label3.Text = "label3";
             // 
@@ -540,7 +544,7 @@ namespace AlarmaArduino
             this.checkBox3.Enabled = false;
             this.checkBox3.Location = new System.Drawing.Point(391, 6);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(136, 17);
+            this.checkBox3.Size = new System.Drawing.Size(139, 17);
             this.checkBox3.TabIndex = 84;
             this.checkBox3.Text = "¿La fecha es correcta?";
             this.checkBox3.UseVisualStyleBackColor = true;
@@ -564,7 +568,7 @@ namespace AlarmaArduino
             this.checkBox1.Enabled = false;
             this.checkBox1.Location = new System.Drawing.Point(391, 6);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(136, 17);
+            this.checkBox1.Size = new System.Drawing.Size(139, 17);
             this.checkBox1.TabIndex = 72;
             this.checkBox1.Text = "¿La fecha es correcta?";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -588,7 +592,7 @@ namespace AlarmaArduino
             this.checkBox14.Enabled = false;
             this.checkBox14.Location = new System.Drawing.Point(391, 6);
             this.checkBox14.Name = "checkBox14";
-            this.checkBox14.Size = new System.Drawing.Size(136, 17);
+            this.checkBox14.Size = new System.Drawing.Size(139, 17);
             this.checkBox14.TabIndex = 124;
             this.checkBox14.Text = "¿La fecha es correcta?";
             this.checkBox14.UseVisualStyleBackColor = true;
@@ -620,7 +624,7 @@ namespace AlarmaArduino
             this.checkBox15.Enabled = false;
             this.checkBox15.Location = new System.Drawing.Point(391, 6);
             this.checkBox15.Name = "checkBox15";
-            this.checkBox15.Size = new System.Drawing.Size(136, 17);
+            this.checkBox15.Size = new System.Drawing.Size(139, 17);
             this.checkBox15.TabIndex = 128;
             this.checkBox15.Text = "¿La fecha es correcta?";
             this.checkBox15.UseVisualStyleBackColor = true;
@@ -652,7 +656,7 @@ namespace AlarmaArduino
             this.checkBox16.Enabled = false;
             this.checkBox16.Location = new System.Drawing.Point(391, 6);
             this.checkBox16.Name = "checkBox16";
-            this.checkBox16.Size = new System.Drawing.Size(136, 17);
+            this.checkBox16.Size = new System.Drawing.Size(139, 17);
             this.checkBox16.TabIndex = 132;
             this.checkBox16.Text = "¿La fecha es correcta?";
             this.checkBox16.UseVisualStyleBackColor = true;
@@ -684,7 +688,7 @@ namespace AlarmaArduino
             this.checkBox17.Enabled = false;
             this.checkBox17.Location = new System.Drawing.Point(391, 6);
             this.checkBox17.Name = "checkBox17";
-            this.checkBox17.Size = new System.Drawing.Size(136, 17);
+            this.checkBox17.Size = new System.Drawing.Size(139, 17);
             this.checkBox17.TabIndex = 136;
             this.checkBox17.Text = "¿La fecha es correcta?";
             this.checkBox17.UseVisualStyleBackColor = true;
@@ -716,7 +720,7 @@ namespace AlarmaArduino
             this.checkBox18.Enabled = false;
             this.checkBox18.Location = new System.Drawing.Point(391, 6);
             this.checkBox18.Name = "checkBox18";
-            this.checkBox18.Size = new System.Drawing.Size(136, 17);
+            this.checkBox18.Size = new System.Drawing.Size(139, 17);
             this.checkBox18.TabIndex = 140;
             this.checkBox18.Text = "¿La fecha es correcta?";
             this.checkBox18.UseVisualStyleBackColor = true;
@@ -756,7 +760,7 @@ namespace AlarmaArduino
             this.checkBox19.Enabled = false;
             this.checkBox19.Location = new System.Drawing.Point(391, 6);
             this.checkBox19.Name = "checkBox19";
-            this.checkBox19.Size = new System.Drawing.Size(136, 17);
+            this.checkBox19.Size = new System.Drawing.Size(139, 17);
             this.checkBox19.TabIndex = 144;
             this.checkBox19.Text = "¿La fecha es correcta?";
             this.checkBox19.UseVisualStyleBackColor = true;
@@ -788,7 +792,7 @@ namespace AlarmaArduino
             this.checkBox20.Enabled = false;
             this.checkBox20.Location = new System.Drawing.Point(391, 6);
             this.checkBox20.Name = "checkBox20";
-            this.checkBox20.Size = new System.Drawing.Size(136, 17);
+            this.checkBox20.Size = new System.Drawing.Size(139, 17);
             this.checkBox20.TabIndex = 148;
             this.checkBox20.Text = "¿La fecha es correcta?";
             this.checkBox20.UseVisualStyleBackColor = true;
@@ -820,7 +824,7 @@ namespace AlarmaArduino
             this.checkBox21.Enabled = false;
             this.checkBox21.Location = new System.Drawing.Point(391, 6);
             this.checkBox21.Name = "checkBox21";
-            this.checkBox21.Size = new System.Drawing.Size(136, 17);
+            this.checkBox21.Size = new System.Drawing.Size(139, 17);
             this.checkBox21.TabIndex = 152;
             this.checkBox21.Text = "¿La fecha es correcta?";
             this.checkBox21.UseVisualStyleBackColor = true;
@@ -863,6 +867,7 @@ namespace AlarmaArduino
             this.panel_master.Name = "panel_master";
             this.panel_master.Size = new System.Drawing.Size(555, 268);
             this.panel_master.TabIndex = 41;
+            this.panel_master.MouseEnter += new System.EventHandler(this.panel_master_MouseEnter);
             // 
             // panel21
             // 
@@ -880,7 +885,7 @@ namespace AlarmaArduino
             this.label21.AutoSize = true;
             this.label21.Location = new System.Drawing.Point(22, 7);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(41, 13);
+            this.label21.Size = new System.Drawing.Size(43, 13);
             this.label21.TabIndex = 176;
             this.label21.Text = "label21";
             // 
@@ -911,7 +916,7 @@ namespace AlarmaArduino
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(22, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 78;
             this.label1.Text = "label1";
             // 
@@ -931,7 +936,7 @@ namespace AlarmaArduino
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(22, 7);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(41, 13);
+            this.label20.Size = new System.Drawing.Size(43, 13);
             this.label20.TabIndex = 175;
             this.label20.Text = "label20";
             // 
@@ -951,7 +956,7 @@ namespace AlarmaArduino
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(22, 6);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(41, 13);
+            this.label19.Size = new System.Drawing.Size(43, 13);
             this.label19.TabIndex = 174;
             this.label19.Text = "label19";
             // 
@@ -971,7 +976,7 @@ namespace AlarmaArduino
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(22, 6);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 78;
             this.label2.Text = "label2";
             // 
@@ -1001,7 +1006,7 @@ namespace AlarmaArduino
             this.checkBox2.Enabled = false;
             this.checkBox2.Location = new System.Drawing.Point(391, 6);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(136, 17);
+            this.checkBox2.Size = new System.Drawing.Size(139, 17);
             this.checkBox2.TabIndex = 76;
             this.checkBox2.Text = "¿La fecha es correcta?";
             this.checkBox2.UseVisualStyleBackColor = true;
@@ -1023,7 +1028,7 @@ namespace AlarmaArduino
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(22, 7);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(41, 13);
+            this.label18.Size = new System.Drawing.Size(43, 13);
             this.label18.TabIndex = 173;
             this.label18.Text = "label18";
             // 
@@ -1043,7 +1048,7 @@ namespace AlarmaArduino
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(22, 6);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 167;
             this.label4.Text = "label4";
             // 
@@ -1061,7 +1066,7 @@ namespace AlarmaArduino
             this.checkBox4.Enabled = false;
             this.checkBox4.Location = new System.Drawing.Point(391, 6);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(136, 17);
+            this.checkBox4.Size = new System.Drawing.Size(139, 17);
             this.checkBox4.TabIndex = 88;
             this.checkBox4.Text = "¿La fecha es correcta?";
             this.checkBox4.UseVisualStyleBackColor = true;
@@ -1095,7 +1100,7 @@ namespace AlarmaArduino
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(22, 7);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(41, 13);
+            this.label17.Size = new System.Drawing.Size(43, 13);
             this.label17.TabIndex = 172;
             this.label17.Text = "label17";
             // 
@@ -1115,7 +1120,7 @@ namespace AlarmaArduino
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(22, 7);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 13);
+            this.label10.Size = new System.Drawing.Size(43, 13);
             this.label10.TabIndex = 167;
             this.label10.Text = "label10";
             // 
@@ -1133,7 +1138,7 @@ namespace AlarmaArduino
             this.checkBox10.Enabled = false;
             this.checkBox10.Location = new System.Drawing.Point(391, 6);
             this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(136, 17);
+            this.checkBox10.Size = new System.Drawing.Size(139, 17);
             this.checkBox10.TabIndex = 112;
             this.checkBox10.Text = "¿La fecha es correcta?";
             this.checkBox10.UseVisualStyleBackColor = true;
@@ -1167,7 +1172,7 @@ namespace AlarmaArduino
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(22, 7);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(41, 13);
+            this.label16.Size = new System.Drawing.Size(43, 13);
             this.label16.TabIndex = 171;
             this.label16.Text = "label16";
             // 
@@ -1187,7 +1192,7 @@ namespace AlarmaArduino
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(22, 7);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.Size = new System.Drawing.Size(37, 13);
             this.label5.TabIndex = 167;
             this.label5.Text = "label5";
             // 
@@ -1205,7 +1210,7 @@ namespace AlarmaArduino
             this.checkBox5.Enabled = false;
             this.checkBox5.Location = new System.Drawing.Point(391, 6);
             this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(136, 17);
+            this.checkBox5.Size = new System.Drawing.Size(139, 17);
             this.checkBox5.TabIndex = 92;
             this.checkBox5.Text = "¿La fecha es correcta?";
             this.checkBox5.UseVisualStyleBackColor = true;
@@ -1239,7 +1244,7 @@ namespace AlarmaArduino
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(22, 7);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(41, 13);
+            this.label15.Size = new System.Drawing.Size(43, 13);
             this.label15.TabIndex = 170;
             this.label15.Text = "label15";
             // 
@@ -1259,7 +1264,7 @@ namespace AlarmaArduino
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(22, 7);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.Size = new System.Drawing.Size(37, 13);
             this.label7.TabIndex = 167;
             this.label7.Text = "label7";
             // 
@@ -1277,7 +1282,7 @@ namespace AlarmaArduino
             this.checkBox7.Enabled = false;
             this.checkBox7.Location = new System.Drawing.Point(391, 6);
             this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(136, 17);
+            this.checkBox7.Size = new System.Drawing.Size(139, 17);
             this.checkBox7.TabIndex = 100;
             this.checkBox7.Text = "¿La fecha es correcta?";
             this.checkBox7.UseVisualStyleBackColor = true;
@@ -1311,7 +1316,7 @@ namespace AlarmaArduino
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(22, 7);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(41, 13);
+            this.label14.Size = new System.Drawing.Size(43, 13);
             this.label14.TabIndex = 169;
             this.label14.Text = "label14";
             // 
@@ -1331,7 +1336,7 @@ namespace AlarmaArduino
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(22, 7);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.Size = new System.Drawing.Size(37, 13);
             this.label6.TabIndex = 167;
             this.label6.Text = "label6";
             // 
@@ -1349,7 +1354,7 @@ namespace AlarmaArduino
             this.checkBox6.Enabled = false;
             this.checkBox6.Location = new System.Drawing.Point(391, 6);
             this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(136, 17);
+            this.checkBox6.Size = new System.Drawing.Size(139, 17);
             this.checkBox6.TabIndex = 96;
             this.checkBox6.Text = "¿La fecha es correcta?";
             this.checkBox6.UseVisualStyleBackColor = true;
@@ -1383,7 +1388,7 @@ namespace AlarmaArduino
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(22, 7);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(41, 13);
+            this.label13.Size = new System.Drawing.Size(43, 13);
             this.label13.TabIndex = 169;
             this.label13.Text = "label13";
             // 
@@ -1401,7 +1406,7 @@ namespace AlarmaArduino
             this.checkBox13.Enabled = false;
             this.checkBox13.Location = new System.Drawing.Point(391, 6);
             this.checkBox13.Name = "checkBox13";
-            this.checkBox13.Size = new System.Drawing.Size(136, 17);
+            this.checkBox13.Size = new System.Drawing.Size(139, 17);
             this.checkBox13.TabIndex = 123;
             this.checkBox13.Text = "¿La fecha es correcta?";
             this.checkBox13.UseVisualStyleBackColor = true;
@@ -1435,7 +1440,7 @@ namespace AlarmaArduino
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(22, 7);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.Size = new System.Drawing.Size(37, 13);
             this.label8.TabIndex = 167;
             this.label8.Text = "label8";
             // 
@@ -1453,7 +1458,7 @@ namespace AlarmaArduino
             this.checkBox8.Enabled = false;
             this.checkBox8.Location = new System.Drawing.Point(391, 6);
             this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(136, 17);
+            this.checkBox8.Size = new System.Drawing.Size(139, 17);
             this.checkBox8.TabIndex = 104;
             this.checkBox8.Text = "¿La fecha es correcta?";
             this.checkBox8.UseVisualStyleBackColor = true;
@@ -1487,7 +1492,7 @@ namespace AlarmaArduino
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(22, 5);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(41, 13);
+            this.label12.Size = new System.Drawing.Size(43, 13);
             this.label12.TabIndex = 168;
             this.label12.Text = "label12";
             // 
@@ -1517,7 +1522,7 @@ namespace AlarmaArduino
             this.checkBox12.Enabled = false;
             this.checkBox12.Location = new System.Drawing.Point(391, 4);
             this.checkBox12.Name = "checkBox12";
-            this.checkBox12.Size = new System.Drawing.Size(136, 17);
+            this.checkBox12.Size = new System.Drawing.Size(139, 17);
             this.checkBox12.TabIndex = 119;
             this.checkBox12.Text = "¿La fecha es correcta?";
             this.checkBox12.UseVisualStyleBackColor = true;
@@ -1539,7 +1544,7 @@ namespace AlarmaArduino
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(22, 7);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.Size = new System.Drawing.Size(37, 13);
             this.label9.TabIndex = 167;
             this.label9.Text = "label9";
             // 
@@ -1557,7 +1562,7 @@ namespace AlarmaArduino
             this.checkBox9.Enabled = false;
             this.checkBox9.Location = new System.Drawing.Point(391, 6);
             this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(136, 17);
+            this.checkBox9.Size = new System.Drawing.Size(139, 17);
             this.checkBox9.TabIndex = 108;
             this.checkBox9.Text = "¿La fecha es correcta?";
             this.checkBox9.UseVisualStyleBackColor = true;
@@ -1591,7 +1596,7 @@ namespace AlarmaArduino
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(22, 7);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 13);
+            this.label11.Size = new System.Drawing.Size(43, 13);
             this.label11.TabIndex = 167;
             this.label11.Text = "label11";
             // 
@@ -1609,7 +1614,7 @@ namespace AlarmaArduino
             this.checkBox11.Enabled = false;
             this.checkBox11.Location = new System.Drawing.Point(391, 6);
             this.checkBox11.Name = "checkBox11";
-            this.checkBox11.Size = new System.Drawing.Size(136, 17);
+            this.checkBox11.Size = new System.Drawing.Size(139, 17);
             this.checkBox11.TabIndex = 116;
             this.checkBox11.Text = "¿La fecha es correcta?";
             this.checkBox11.UseVisualStyleBackColor = true;
@@ -1631,7 +1636,7 @@ namespace AlarmaArduino
             // 
             this.reloj.AutoSize = true;
             this.reloj.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reloj.Location = new System.Drawing.Point(338, 54);
+            this.reloj.Location = new System.Drawing.Point(333, 54);
             this.reloj.Name = "reloj";
             this.reloj.Size = new System.Drawing.Size(83, 31);
             this.reloj.TabIndex = 45;
@@ -1645,7 +1650,7 @@ namespace AlarmaArduino
             // 
             this.fecha.AutoSize = true;
             this.fecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fecha.Location = new System.Drawing.Point(338, 23);
+            this.fecha.Location = new System.Drawing.Point(333, 23);
             this.fecha.Name = "fecha";
             this.fecha.Size = new System.Drawing.Size(90, 31);
             this.fecha.TabIndex = 46;
@@ -1654,7 +1659,7 @@ namespace AlarmaArduino
             // pictureBox3
             // 
             this.pictureBox3.Image = global::SedimentTrap.Properties.Resources.config;
-            this.pictureBox3.Location = new System.Drawing.Point(38, 70);
+            this.pictureBox3.Location = new System.Drawing.Point(0, 87);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(69, 68);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1666,9 +1671,9 @@ namespace AlarmaArduino
             this.label_connect.AutoSize = true;
             this.label_connect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_connect.ForeColor = System.Drawing.Color.Red;
-            this.label_connect.Location = new System.Drawing.Point(76, 23);
+            this.label_connect.Location = new System.Drawing.Point(58, 48);
             this.label_connect.Name = "label_connect";
-            this.label_connect.Size = new System.Drawing.Size(245, 15);
+            this.label_connect.Size = new System.Drawing.Size(243, 15);
             this.label_connect.TabIndex = 49;
             this.label_connect.Text = "No está conectado actualmente a la trampa";
             // 
@@ -1677,7 +1682,7 @@ namespace AlarmaArduino
             this.btn_fechas.Enabled = false;
             this.btn_fechas.Location = new System.Drawing.Point(567, 38);
             this.btn_fechas.Name = "btn_fechas";
-            this.btn_fechas.Size = new System.Drawing.Size(129, 23);
+            this.btn_fechas.Size = new System.Drawing.Size(140, 23);
             this.btn_fechas.TabIndex = 50;
             this.btn_fechas.Text = "Almacenar en la trampa";
             this.btn_fechas.UseVisualStyleBackColor = true;
@@ -1686,7 +1691,7 @@ namespace AlarmaArduino
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(702, 70);
+            this.listBox1.Location = new System.Drawing.Point(713, 70);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(107, 173);
             this.listBox1.TabIndex = 51;
@@ -1694,7 +1699,7 @@ namespace AlarmaArduino
             // bt_print
             // 
             this.bt_print.Enabled = false;
-            this.bt_print.Location = new System.Drawing.Point(700, 38);
+            this.bt_print.Location = new System.Drawing.Point(711, 38);
             this.bt_print.Name = "bt_print";
             this.bt_print.Size = new System.Drawing.Size(109, 23);
             this.bt_print.TabIndex = 52;
@@ -1705,20 +1710,20 @@ namespace AlarmaArduino
             // EEPROM_Read
             // 
             this.EEPROM_Read.Enabled = false;
-            this.EEPROM_Read.Location = new System.Drawing.Point(815, 38);
+            this.EEPROM_Read.Location = new System.Drawing.Point(571, 54);
             this.EEPROM_Read.Name = "EEPROM_Read";
-            this.EEPROM_Read.Size = new System.Drawing.Size(111, 23);
+            this.EEPROM_Read.Size = new System.Drawing.Size(140, 23);
             this.EEPROM_Read.TabIndex = 54;
-            this.EEPROM_Read.Text = "Verificar fechas";
+            this.EEPROM_Read.Text = "Verificar hora y fechas";
             this.EEPROM_Read.UseVisualStyleBackColor = true;
             this.EEPROM_Read.Click += new System.EventHandler(this.EEPROM_Read_Click);
             // 
             // lbl_fechas
             // 
             this.lbl_fechas.AutoSize = true;
-            this.lbl_fechas.Location = new System.Drawing.Point(699, 248);
+            this.lbl_fechas.Location = new System.Drawing.Point(710, 248);
             this.lbl_fechas.Name = "lbl_fechas";
-            this.lbl_fechas.Size = new System.Drawing.Size(84, 13);
+            this.lbl_fechas.Size = new System.Drawing.Size(89, 13);
             this.lbl_fechas.TabIndex = 55;
             this.lbl_fechas.Text = "Fechas elegidas";
             // 
@@ -1727,20 +1732,20 @@ namespace AlarmaArduino
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tabControl1.Location = new System.Drawing.Point(0, 187);
+            this.tabControl1.Location = new System.Drawing.Point(0, 254);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(947, 355);
+            this.tabControl1.Size = new System.Drawing.Size(956, 355);
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabControl1.TabIndex = 56;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.listBox2);
+            this.tabPage1.Controls.Add(this.btnSyncDate);
             this.tabPage1.Controls.Add(this.inputSerial);
             this.tabPage1.Controls.Add(this.panel_master);
             this.tabPage1.Controls.Add(this.lbl_fechas);
             this.tabPage1.Controls.Add(this.numericUpDown1);
-            this.tabPage1.Controls.Add(this.EEPROM_Read);
             this.tabPage1.Controls.Add(this.label1_1);
             this.tabPage1.Controls.Add(this.bt_print);
             this.tabPage1.Controls.Add(this.btn_fechas);
@@ -1748,18 +1753,21 @@ namespace AlarmaArduino
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(939, 329);
+            this.tabPage1.Size = new System.Drawing.Size(948, 329);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Almacenar fechas";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // listBox2
+            // btnSyncDate
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(815, 70);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(111, 173);
-            this.listBox2.TabIndex = 57;
+            this.btnSyncDate.Enabled = false;
+            this.btnSyncDate.Location = new System.Drawing.Point(567, 13);
+            this.btnSyncDate.Name = "btnSyncDate";
+            this.btnSyncDate.Size = new System.Drawing.Size(140, 23);
+            this.btnSyncDate.TabIndex = 57;
+            this.btnSyncDate.Text = "Sincronizar hora y fecha";
+            this.btnSyncDate.UseVisualStyleBackColor = true;
+            this.btnSyncDate.Click += new System.EventHandler(this.btnSyncDate_Click);
             // 
             // inputSerial
             // 
@@ -1767,11 +1775,14 @@ namespace AlarmaArduino
             this.inputSerial.Multiline = true;
             this.inputSerial.Name = "inputSerial";
             this.inputSerial.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.inputSerial.Size = new System.Drawing.Size(134, 173);
+            this.inputSerial.Size = new System.Drawing.Size(145, 173);
             this.inputSerial.TabIndex = 56;
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label24);
+            this.tabPage2.Controls.Add(this.tb_pos_act);
+            this.tabPage2.Controls.Add(this.cb_pos_ok);
             this.tabPage2.Controls.Add(this.PosDes);
             this.tabPage2.Controls.Add(this.label23);
             this.tabPage2.Controls.Add(this.PosAct);
@@ -1781,77 +1792,46 @@ namespace AlarmaArduino
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(939, 329);
+            this.tabPage2.Size = new System.Drawing.Size(948, 329);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Girar trampa";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // btn_start
+            // label24
             // 
-            this.btn_start.Enabled = false;
-            this.btn_start.Image = global::SedimentTrap.Properties.Resources.ic_adjust_black_48dp;
-            this.btn_start.Location = new System.Drawing.Point(87, 53);
-            this.btn_start.Name = "btn_start";
-            this.btn_start.Size = new System.Drawing.Size(57, 68);
-            this.btn_start.TabIndex = 3;
-            this.btn_start.Text = "Girar";
-            this.btn_start.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_start.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btn_start.UseVisualStyleBackColor = true;
-            this.btn_start.Click += new System.EventHandler(this.btn_der_Click);
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(218, 57);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(210, 13);
+            this.label24.TabIndex = 17;
+            this.label24.Text = "Por favor seleccione la posición correcta";
+            this.label24.Visible = false;
             // 
-            // btn_stop
+            // tb_pos_act
             // 
-            this.btn_stop.AutoEllipsis = true;
-            this.btn_stop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_stop.Enabled = false;
-            this.btn_stop.Image = global::SedimentTrap.Properties.Resources.ic_warning_amber_48dp;
-            this.btn_stop.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_stop.Location = new System.Drawing.Point(24, 53);
-            this.btn_stop.Name = "btn_stop";
-            this.btn_stop.Size = new System.Drawing.Size(57, 68);
-            this.btn_stop.TabIndex = 1;
-            this.btn_stop.Text = "Detener";
-            this.btn_stop.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_stop.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btn_stop.UseVisualStyleBackColor = true;
-            this.btn_stop.Click += new System.EventHandler(this.btn_izq_Click);
+            this.tb_pos_act.Enabled = false;
+            this.tb_pos_act.Location = new System.Drawing.Point(125, 23);
+            this.tb_pos_act.Name = "tb_pos_act";
+            this.tb_pos_act.Size = new System.Drawing.Size(55, 20);
+            this.tb_pos_act.TabIndex = 16;
+            this.tb_pos_act.Text = "1";
             // 
-            // PosAct
+            // cb_pos_ok
             // 
-            this.PosAct.Location = new System.Drawing.Point(311, 21);
-            this.PosAct.Maximum = new decimal(new int[] {
-            21,
-            0,
-            0,
-            0});
-            this.PosAct.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.PosAct.Name = "PosAct";
-            this.PosAct.Size = new System.Drawing.Size(55, 20);
-            this.PosAct.TabIndex = 11;
-            this.PosAct.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.PosAct.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(196, 26);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(79, 13);
-            this.label22.TabIndex = 12;
-            this.label22.Text = "Posición actual";
+            this.cb_pos_ok.AutoSize = true;
+            this.cb_pos_ok.Checked = true;
+            this.cb_pos_ok.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb_pos_ok.Location = new System.Drawing.Point(200, 23);
+            this.cb_pos_ok.Name = "cb_pos_ok";
+            this.cb_pos_ok.Size = new System.Drawing.Size(187, 17);
+            this.cb_pos_ok.TabIndex = 15;
+            this.cb_pos_ok.Text = "¿La posición actual es correcta?";
+            this.cb_pos_ok.UseVisualStyleBackColor = true;
+            this.cb_pos_ok.CheckedChanged += new System.EventHandler(this.cb_pos_ok_CheckedChanged);
             // 
             // PosDes
             // 
-            this.PosDes.Location = new System.Drawing.Point(311, 48);
+            this.PosDes.Location = new System.Drawing.Point(125, 50);
             this.PosDes.Maximum = new decimal(new int[] {
             21,
             0,
@@ -1875,23 +1855,102 @@ namespace AlarmaArduino
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(196, 53);
+            this.label23.Location = new System.Drawing.Point(27, 57);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(91, 13);
+            this.label23.Size = new System.Drawing.Size(95, 13);
             this.label23.TabIndex = 14;
             this.label23.Text = "Posición deseada";
+            // 
+            // PosAct
+            // 
+            this.PosAct.Enabled = false;
+            this.PosAct.Location = new System.Drawing.Point(423, 50);
+            this.PosAct.Maximum = new decimal(new int[] {
+            21,
+            0,
+            0,
+            0});
+            this.PosAct.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.PosAct.Name = "PosAct";
+            this.PosAct.Size = new System.Drawing.Size(55, 20);
+            this.PosAct.TabIndex = 11;
+            this.PosAct.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.PosAct.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.PosAct.Visible = false;
+            this.PosAct.ValueChanged += new System.EventHandler(this.PosAct_ValueChanged);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(27, 30);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(83, 13);
+            this.label22.TabIndex = 12;
+            this.label22.Text = "Posición actual";
+            // 
+            // btn_start
+            // 
+            this.btn_start.Enabled = false;
+            this.btn_start.Image = global::SedimentTrap.Properties.Resources.Arrow_48px;
+            this.btn_start.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_start.Location = new System.Drawing.Point(21, 104);
+            this.btn_start.Name = "btn_start";
+            this.btn_start.Size = new System.Drawing.Size(67, 79);
+            this.btn_start.TabIndex = 3;
+            this.btn_start.Text = "Girar";
+            this.btn_start.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_start.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_start.UseVisualStyleBackColor = true;
+            this.btn_start.Click += new System.EventHandler(this.btn_start_clic);
+            // 
+            // btn_stop
+            // 
+            this.btn_stop.AutoEllipsis = true;
+            this.btn_stop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_stop.Enabled = false;
+            this.btn_stop.Image = global::SedimentTrap.Properties.Resources.Stop01;
+            this.btn_stop.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_stop.Location = new System.Drawing.Point(94, 104);
+            this.btn_stop.Name = "btn_stop";
+            this.btn_stop.Size = new System.Drawing.Size(67, 79);
+            this.btn_stop.TabIndex = 1;
+            this.btn_stop.Text = "Detener";
+            this.btn_stop.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_stop.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_stop.UseVisualStyleBackColor = true;
+            this.btn_stop.Click += new System.EventHandler(this.btn_stop_Click);
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(571, 90);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.ScrollAlwaysVisible = true;
+            this.listBox2.Size = new System.Drawing.Size(163, 160);
+            this.listBox2.TabIndex = 57;
+            this.listBox2.MouseEnter += new System.EventHandler(this.listBox2_MouseEnter);
             // 
             // ComunicacionArduino
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(947, 542);
+            this.ClientSize = new System.Drawing.Size(956, 609);
+            this.Controls.Add(this.listBox2);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label_connect);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.fecha);
             this.Controls.Add(this.reloj);
+            this.Controls.Add(this.EEPROM_Read);
             this.Controls.Add(this.panel_config);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -1899,6 +1958,7 @@ namespace AlarmaArduino
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "ComunicacionArduino";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trampa de sedimentos";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ComunicacionArduino_FormClosing);
             this.Load += new System.EventHandler(this.ComunicacionArduino_Load);
@@ -1958,8 +2018,8 @@ namespace AlarmaArduino
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PosAct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PosDes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PosAct)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1967,12 +2027,16 @@ namespace AlarmaArduino
 
         #endregion
 
-        public TextBox inputSerial;
-        private ListBox listBox2;
-        public NumericUpDown PosAct;
+        private CheckBox cb_pos_ok;
         private Label label22;
-        public NumericUpDown PosDes;
         private Label label23;
+        private Label label24;
+        private ListBox listBox2;
+        private TextBox tb_pos_act;
+        public NumericUpDown PosAct;
+        public NumericUpDown PosDes;
+        public TextBox inputSerial;
+        private Button btnSyncDate;
     }
 }
 

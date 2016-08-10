@@ -118,79 +118,100 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="right20" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\right20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="left10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\left10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="right10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\right10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ComunicacionArduino_MensajeErrorPuertoInvalido_Puerto_no_válido" xml:space="preserve">
-    <value>Puerto no válido</value>
-  </data>
-  <data name="ComunicacionArduino_MensajeErrorCom_Elija_antes_un_puerto_COM" xml:space="preserve">
-    <value>Elija antes un puerto COM</value>
-  </data>
-  <data name="ComunicacionArduino_MensajeErrorMuestrasCero_Elija_un_número_adecuado" xml:space="preserve">
-    <value>Elija un número adecuado</value>
-  </data>
-  <data name="ComunicacionArduino_MensajeErrorPuertoInvalido_Elija_un_puerto_adecuado" xml:space="preserve">
-    <value>Elija un puerto adecuado</value>
-  </data>
-  <data name="left20" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\left20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="OFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\OFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_error_red_48dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\ic_error_red_48dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_ok_48dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\ic_ok_48dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icml" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\icml.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ComunicacionArduino_MensajeErrorFechaMenor_Elija_una_fecha_adecuada" xml:space="preserve">
-    <value>Elija una fecha adecuada</value>
-  </data>
-  <data name="ComunicacionArduino_ON_Click_El_led_está_encendido" xml:space="preserve">
-    <value>El led está encendido</value>
-  </data>
-  <data name="config" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\config.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_error_red_48dp1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\ic_error_red_48dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ComunicacionArduino_MensajeErrorMuestras_No_se_pueden_elegir_mas_muestras" xml:space="preserve">
-    <value>No se pueden elegir mas muestras</value>
-  </data>
-  <data name="ic_adjust_black_48dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\ic_adjust_black_48dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ComunicacionArduino_MensajeErrorMuestras_El_número_máximo_de_muestras_es_21" xml:space="preserve">
-    <value>El número máximo de muestras es 21</value>
-  </data>
-  <data name="ComunicacionArduino_NumeraMuestras_Muestra_" xml:space="preserve">
-    <value>Muestra </value>
-  </data>
-  <data name="ComunicacionArduino_MensajeErrorCom_Error_al_elegir_un_puerto" xml:space="preserve">
-    <value>Error al elegir un puerto</value>
-  </data>
-  <data name="ON" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\ON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logfile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\logfile.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="ComunicacionArduino_MensajeErrorMuestrasCero_El_número_mínimo_de_muestras_es_cero" xml:space="preserve">
     <value>El número mínimo de muestras es cero</value>
   </data>
-  <data name="ic_warning_amber_48dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\ic_warning_amber_48dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\1467871276_arrows-29.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ComunicacionArduino_NumeraMuestras_Muestra_" xml:space="preserve">
+    <value>Muestra </value>
+  </data>
+  <data name="right20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\right20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_ok_48dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\ic_ok_48dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ComunicacionArduino_MensajeErrorMuestras_No_se_pueden_elegir_mas_muestras" xml:space="preserve">
+    <value>No se pueden elegir mas muestras</value>
+  </data>
+  <data name="left20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\left20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ComunicacionArduino_MensajeErrorFechaMenor_Elija_una_fecha_adecuada" xml:space="preserve">
+    <value>Elija una fecha adecuada</value>
   </data>
   <data name="ComunicacionArduino_EEPROM_Read_Click_Error" xml:space="preserve">
     <value>Error</value>
+  </data>
+  <data name="txt_revise_fechas" xml:space="preserve">
+    <value> Revise la cantidad de muestras que quiere almacer</value>
+  </data>
+  <data name="Stop01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\1467875157_Stop1NormalRed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_error_red_48dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\ic_error_red_48dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ComunicacionArduino_MensajeErrorMuestrasCero_Elija_un_número_adecuado" xml:space="preserve">
+    <value>Elija un número adecuado</value>
+  </data>
+  <data name="OFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\OFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icml" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\icml.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="right10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\right10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Arrow_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\1467871449_arrows-29.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ComunicacionArduino_MensajeErrorPuertoInvalido_Elija_un_puerto_adecuado" xml:space="preserve">
+    <value>Elija un puerto adecuado</value>
+  </data>
+  <data name="ComunicacionArduino_MensajeErrorCom_Elija_antes_un_puerto_COM" xml:space="preserve">
+    <value>Elija antes un puerto COM</value>
+  </data>
+  <data name="left10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\left10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ComunicacionArduino_MensajeErrorMuestras_El_número_máximo_de_muestras_es_21" xml:space="preserve">
+    <value>El número máximo de muestras es 21</value>
+  </data>
+  <data name="ComunicacionArduino_MensajeErrorCom_Error_al_elegir_un_puerto" xml:space="preserve">
+    <value>Error al elegir un puerto</value>
+  </data>
+  <data name="ComunicacionArduino_MensajeErrorPuertoInvalido_Puerto_no_válido" xml:space="preserve">
+    <value>Puerto no válido</value>
+  </data>
+  <data name="txt_title_error_fechas" xml:space="preserve">
+    <value>Error al almacenar las fechas</value>
+  </data>
+  <data name="ComunicacionArduino_ON_Click_El_led_está_encendido" xml:space="preserve">
+    <value>El led está encendido</value>
+  </data>
+  <data name="ic_warning_amber_48dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\ic_warning_amber_48dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_error_red_48dp1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\ic_error_red_48dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_adjust_black_48dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\ic_adjust_black_48dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ON" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\ON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="config" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\config.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ok_png" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\ok_png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -12,8 +12,10 @@ namespace AlarmaArduino
 {
     public partial class ComunicacionArduino : Form
     {
-        //public static string ln = "\n";
-        public static string ln = "l";
+        //public static string ln = "\n";  //Esta línea habilita que el último comando sea un salto de línea
+        // ReSharper disable once InconsistentNaming
+        public static string ln = "$"; //El caracter final será $ debido a limitaciones de simulación en PROTEUS
+        public static int MaxDias = 31;
         public ComunicacionArduino()
         {
             InitializeComponent();  //Se inicia el programa
@@ -555,14 +557,6 @@ namespace AlarmaArduino
                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        private static void MensajeErrorFechaMenor()
-        {
-            MessageBox.Show(
-                @"Elija otra fecha, se tomará una semana después de la muestra anterior",
-                Resources.ComunicacionArduino_MensajeErrorFechaMenor_Elija_una_fecha_adecuada, MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
-        }
-
         #endregion Mensajes de error
 
         /*La metodología es la siguiente:
@@ -578,8 +572,7 @@ namespace AlarmaArduino
         public void BuscaPuertos_Click(object sender, EventArgs e)// Lista de todos los puertos disponibles
         {
             string[] ports = SerialPort.GetPortNames();
-            // Se muestran los puertos en un combo box
-            comboBox1.Items.Clear();
+            comboBox1.Items.Clear();        // Se muestran los puertos en un combo box
             foreach (string port in ports)  //Se buscan todos los puertos disponibles y se enlistan
             {
                 comboBox1.Items.Add(port);
@@ -608,18 +601,17 @@ namespace AlarmaArduino
                     serialPort1.Parity = Parity.None;
                     serialPort1.StopBits = StopBits.One;
                     serialPort1.DataReceived += serialPort1_DataReceived;
-                    //mas o menos linea 1400
                     serialPort1.Open();
                     Desconectar.Enabled = true;
                     Conectar.Enabled = false;
                     textBox1.Text = @"Elija la primer fecha";
-                    //Thread.Sleep(1000);
                     label_connect.Text = @"Conectado";
                     label_connect.ForeColor = Color.SeaGreen;
-                    pictureBox1.Image = Resources.ic_ok_48dp;
+                    pictureBox1.Image = Resources.ok_png;
                     btn_fechas.Enabled = true;
                     btn_start.Enabled = true;
                     EEPROM_Read.Enabled = true;
+                    btnSyncDate.Enabled = true;
                     btn_fechas.Text = @"Almacenar en la trampa";
                 }
                 catch (IOException exception)
@@ -651,9 +643,10 @@ namespace AlarmaArduino
         }
         private void OFF_Click(object sender, EventArgs e)//Cerrar puerto
         {
-            //Este método se ejecuta cuando se presione el botòn de desconectar
+            //Este método se ejecuta cuando se presione el botón de desconectar
             try
             {
+                listBox2.Items.Clear();
                 if (serialPort1.IsOpen)
                 {
                     //Verifica que el puero serie este abierto, y si es asi, lo desconecta
@@ -665,6 +658,7 @@ namespace AlarmaArduino
                     label_connect.ForeColor = Color.Red;
                     pictureBox1.Image = Resources.ic_error_red_48dp;
                     EEPROM_Read.Enabled = false;
+                    btnSyncDate.Enabled = false;
                 }
                 else if (!serialPort1.IsOpen)
                 {
@@ -678,6 +672,12 @@ namespace AlarmaArduino
                 //Solo si no estuviera abierto el puerto se genera este error
                 MensajeErrorCom();
                 //MessageBox.Show("Eliga el puerto serie antes");
+            }
+            catch (IOException)
+            {
+                MessageBox.Show(
+                    @"Error al comunicarse con el puerto COM, verifique que la trampa no esté desconectada y por favor seleccione de nuevo el puerto COM correspondiente",
+                    @"Reinicie el programa",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
         public void ComunicacionArduino_FormClosing(object sender, FormClosingEventArgs e)//Al salir, cerrar el puerto COM
@@ -800,6 +800,7 @@ namespace AlarmaArduino
         {
             //Cada que se presiona el botón se debe borrar el contenido de las listas
             listBox1.Items.Clear();
+            listBox2.Items.Clear();
             inputSerial.Clear();
             //Utilizamos una variable como contador
             int j = 0;
@@ -807,6 +808,7 @@ namespace AlarmaArduino
             var listaFechas = new string[21];
             listaFechas[j] = dateTimePicker1.Value.ToShortDateString();
             j++;
+            //var dos_uno = (dateTimePicker2.Value - dateTimePicker1.Value);
             listaFechas[j] = dateTimePicker2.Value.ToShortDateString();
             j++;
             listaFechas[j] = dateTimePicker3.Value.ToShortDateString();
@@ -860,7 +862,7 @@ namespace AlarmaArduino
                     Thread.Sleep(500);//Tiempo para que la fecha se mande sin problemas
 
                     /*Se escribe en el puerto serie cada una de las fechas con el
-                    formato sdd/mm/aaaa\n ejemplo s09/06/2015\n es el 9 de Junio de 2015
+                    formato sdd/mm/aaaa\n ejemplo s09/06/2015$ es el 9 de Junio de 2015
                      */
                 }
             }
@@ -871,7 +873,7 @@ namespace AlarmaArduino
             }
             catch (IndexOutOfRangeException exception)
             {
-                MessageBox.Show(exception.Message + " Revise la cantidad de muestras que quiere almacer", "Error al almacenar las fechas", MessageBoxButtons.OK,
+                MessageBox.Show(exception.Message + Resources.txt_revise_fechas, Resources.txt_title_error_fechas, MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
         }
@@ -882,14 +884,14 @@ namespace AlarmaArduino
             {
                 //CheckForIllegalCrossThreadCalls = false;
                 string line = serialPort1.ReadLine();
-                this.BeginInvoke(new LineReceivedEvent(LineReceived), line);
+                BeginInvoke(new LineReceivedEvent(LineReceived), line);
             }
             catch (IOException)
             {
                 
                 serialPort1.Close();
             }
-            catch(System.InvalidOperationException)
+            catch(InvalidOperationException)
             {
                 serialPort1.Close();
             }
@@ -961,7 +963,30 @@ namespace AlarmaArduino
 
         public void Fechas()
         {
+
             dateTimePicker1.MinDate = DateTime.Today;
+            dateTimePicker2.MaxDate = dateTimePicker1.Value.AddDays(MaxDias);
+            dateTimePicker3.MaxDate = dateTimePicker2.Value.AddDays(MaxDias);
+            dateTimePicker4.MaxDate = dateTimePicker3.Value.AddDays(MaxDias);
+            dateTimePicker5.MaxDate = dateTimePicker4.Value.AddDays(MaxDias);
+            dateTimePicker6.MaxDate = dateTimePicker5.Value.AddDays(MaxDias);
+            dateTimePicker7.MaxDate = dateTimePicker6.Value.AddDays(MaxDias);
+            dateTimePicker8.MaxDate = dateTimePicker7.Value.AddDays(MaxDias);
+            dateTimePicker9.MaxDate = dateTimePicker8.Value.AddDays(MaxDias);
+            dateTimePicker10.MaxDate = dateTimePicker9.Value.AddDays(MaxDias);
+            dateTimePicker11.MaxDate = dateTimePicker10.Value.AddDays(MaxDias);
+            dateTimePicker12.MaxDate = dateTimePicker11.Value.AddDays(MaxDias);
+            dateTimePicker13.MaxDate = dateTimePicker12.Value.AddDays(MaxDias);
+            dateTimePicker14.MaxDate = dateTimePicker13.Value.AddDays(MaxDias);
+            dateTimePicker15.MaxDate = dateTimePicker14.Value.AddDays(MaxDias);
+            dateTimePicker16.MaxDate = dateTimePicker15.Value.AddDays(MaxDias);
+            dateTimePicker17.MaxDate = dateTimePicker16.Value.AddDays(MaxDias);
+            dateTimePicker18.MaxDate = dateTimePicker17.Value.AddDays(MaxDias);
+            dateTimePicker19.MaxDate = dateTimePicker18.Value.AddDays(MaxDias);
+            dateTimePicker20.MaxDate = dateTimePicker19.Value.AddDays(MaxDias);
+            dateTimePicker21.MaxDate = dateTimePicker20.Value.AddDays(MaxDias);
+            
+            
             dateTimePicker2.MinDate = dateTimePicker1.Value.AddHours(1);
             dateTimePicker3.MinDate = dateTimePicker2.Value.AddHours(1);
             dateTimePicker4.MinDate = dateTimePicker3.Value.AddHours(1);
@@ -982,6 +1007,7 @@ namespace AlarmaArduino
             dateTimePicker19.MinDate = dateTimePicker18.Value.AddHours(1);
             dateTimePicker20.MinDate = dateTimePicker19.Value.AddHours(1);
             dateTimePicker21.MinDate = dateTimePicker20.Value.AddHours(1);
+            
             DateTime fecha1 = dateTimePicker1.Value;
 
             textBox1.Text = fecha1.ToLongDateString();
@@ -1515,8 +1541,23 @@ namespace AlarmaArduino
         private void EEPROM_Read_Click(object sender, EventArgs e)
         {
             listBox2.Items.Clear();
+            /*
             try
             {
+                MessageBox.Show("")
+                //Process.Start(@"C:\Users\Daniel\Dropbox\Tesis\Proyecto\AlarmaArduino\AlarmaArduino\AlarmaArduino\bin\Debug\logfile.txt");
+                //Process.Start(@"..\logfile.txt");
+            }
+            catch (Exception ex1)
+            {
+                MessageBox.Show(ex1.Message, "No se encuentra el archivo de texto");
+
+            }
+            */
+        
+            try
+            {
+                serialPort1.Write("pt" + ln);
                 serialPort1.Write("pr"+ln);
                 //string message = serialPort1.ReadLine();
                 LineReceived("");
@@ -1527,45 +1568,146 @@ namespace AlarmaArduino
             }
         }
 
-        private void btn_der_Click(object sender, EventArgs e)
+
+
+
+        private void cb_pos_ok_CheckedChanged(object sender, EventArgs e)
         {
+            if (!cb_pos_ok.Checked)
+            {
+                PosAct.Visible = true;
+                PosAct.Enabled = true;
+                label24.Visible = true;
+            }
+            if (cb_pos_ok.Checked)
+            {
+                PosAct.Visible = false;
+                PosAct.Enabled = false;
+                label24.Visible = false;
+            }
+
+
+        }
+
+        private void PosAct_ValueChanged(object sender, EventArgs e)
+        {
+            var posActual = PosAct.Value;
+            // ReSharper disable once SpecifyACultureInStringConversionExplicitly
+            tb_pos_act.Text = posActual.ToString();
+        }
+
+        private void btn_start_clic(object sender, EventArgs e)
+        {
+            listBox2.Items.Clear();
+            btn_start.Enabled = false;
+            btn_stop.Enabled = true;
+            string posActString;
+            string posDesString;
+            int posActVal = Convert.ToInt32(tb_pos_act.Text);   //Definimos una variable de tipo entero para la posición actual
+            int posDesVal = Convert.ToInt32(PosDes.Value);      //De igual forma definimos una variable de tipo entero para la pos deseada
+            //Debemos verificar la cadena si la posición es menor a dos dígitos.
+            if (posActVal < 10)
+            {
+                posActString = "0" + Convert.ToString(posActVal);
+            }
+            else
+            {
+                posActString = Convert.ToString(posActVal);
+            }
+
+            if (posDesVal < 10)
+            {
+                posDesString = "0" + Convert.ToString(posDesVal);
+            }
+            else
+            {
+                posDesString = Convert.ToString(posDesVal);
+            }
+
+
+            /*Al presionar el botón se enviará al puerto serie el siguiente comando:
+             * monpaXXpdYYLN
+             * Donde:
+             * mon: Encender motor
+             * pa: Posición actual
+             * XX: Posición actual, en dos dígitos (Verificar para posiciones menores a 10)
+             * pd: Posición deseada
+             * YY: Posición actual, en dos dígitos (Verificar para posiciones menores a 10)
+             * 
+             * 
+             */
             try
             {
-                if ((int)PosAct.Value==(int)PosDes.Value)
-                {
-                    MessageBox.Show("La trampa se encuentra en la posición deseada", "Posición alcanzada",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    serialPort1.Write("mof"+ln);
-                }
-                
-                else if (Math.Abs((int)PosDes.Value - ((int)PosAct.Value)) < 10&& (int)PosAct.Value< (int)PosDes.Value)
-                {
-                    MessageBox.Show("Derecha");
-                }
-                else if (Math.Abs((int)PosDes.Value - ((int)PosAct.Value)) > 10)
-                {
-                    MessageBox.Show("Izquierda");
-                }
-                btn_stop.Enabled = true;
-                serialPort1.Write("l"+ln);
+                /* Para verificar las variables
+                MessageBox.Show("La posición actual es " + posActVal + " y la posición deseada es " + posDesVal +
+                                " y para verificar la conversión, actual por deseada es " + posActVal*posDesVal);
+                MessageBox.Show("Pos act es " + posActString + " y pos des es " + posDesString);
+                */
+                serialPort1.Write("monpa" + posActString + "pd" + posDesString + ln);
             }
             catch (InvalidOperationException ex)
             {
                 btn_stop.Enabled = false;
                 MessageBox.Show(ex.Message);
             }
+            catch (IOException serial)
+            {
+                MessageBox.Show(serial.Message);
+            }
         }
 
-        private void btn_izq_Click(object sender, EventArgs e)
+        private void btn_stop_Click(object sender, EventArgs e)
         {
+            btn_start.Enabled = true;
+            listBox2.Items.Clear();
+            //btn_stop.Enabled = false;
             try
             {
-                serialPort1.Write("mof\n");
+                serialPort1.Write("mof" + ln);
+                LineReceived("");
             }
             catch (InvalidOperationException ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            catch (IOException exception)
+            {
+                //MessageBox.Show(exception.Message);
+                MensajeErrorPuertoInvalido(exception);
+                label_connect.ForeColor = Color.Red;
+            }
+            
+        }
+
+        private void btnSyncDate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                listBox2.Items.Clear();
+                var today = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                //MessageBox.Show(today);
+                serialPort1.Write("t" + today + ln);
+                Thread.Sleep(100);//Tiempo para que la fecha se mande sin problemas
+
+                /*Se escribe en el puerto serie cada una de las fechas con el
+                formato sdd/mm/aaaa\n ejemplo s09/06/2015$ es el 9 de Junio de 2015
+                 */
+            }
+            catch (InvalidOperationException)
+            {
+                bt_print.Enabled = false;
+                MensajeErrorCom();
+            }
+        }
+
+        private void listBox2_MouseEnter(object sender, EventArgs e)
+        {
+            listBox2.Focus();
+        }
+
+        private void panel_master_MouseEnter(object sender, EventArgs e)
+        {
+            panel_master.Focus();
         }
     }
 }

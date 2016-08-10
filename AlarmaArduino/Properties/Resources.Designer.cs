@@ -22,7 +22,7 @@ namespace SedimentTrap.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace SedimentTrap.Properties {
         ///   Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SedimentTrap.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace SedimentTrap.Properties {
         ///   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,9 +61,29 @@ namespace SedimentTrap.Properties {
         }
         
         /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Arrow {
+            get {
+                object obj = ResourceManager.GetObject("Arrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Arrow_48px {
+            get {
+                object obj = ResourceManager.GetObject("Arrow_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Error.
         /// </summary>
-        internal static string ComunicacionArduino_EEPROM_Read_Click_Error {
+        public static string ComunicacionArduino_EEPROM_Read_Click_Error {
             get {
                 return ResourceManager.GetString("ComunicacionArduino_EEPROM_Read_Click_Error", resourceCulture);
             }
@@ -72,7 +92,7 @@ namespace SedimentTrap.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Elija antes un puerto COM.
         /// </summary>
-        internal static string ComunicacionArduino_MensajeErrorCom_Elija_antes_un_puerto_COM {
+        public static string ComunicacionArduino_MensajeErrorCom_Elija_antes_un_puerto_COM {
             get {
                 return ResourceManager.GetString("ComunicacionArduino_MensajeErrorCom_Elija_antes_un_puerto_COM", resourceCulture);
             }
@@ -81,7 +101,7 @@ namespace SedimentTrap.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Error al elegir un puerto.
         /// </summary>
-        internal static string ComunicacionArduino_MensajeErrorCom_Error_al_elegir_un_puerto {
+        public static string ComunicacionArduino_MensajeErrorCom_Error_al_elegir_un_puerto {
             get {
                 return ResourceManager.GetString("ComunicacionArduino_MensajeErrorCom_Error_al_elegir_un_puerto", resourceCulture);
             }
@@ -90,7 +110,7 @@ namespace SedimentTrap.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Elija una fecha adecuada.
         /// </summary>
-        internal static string ComunicacionArduino_MensajeErrorFechaMenor_Elija_una_fecha_adecuada {
+        public static string ComunicacionArduino_MensajeErrorFechaMenor_Elija_una_fecha_adecuada {
             get {
                 return ResourceManager.GetString("ComunicacionArduino_MensajeErrorFechaMenor_Elija_una_fecha_adecuada", resourceCulture);
             }
@@ -99,7 +119,7 @@ namespace SedimentTrap.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a El número máximo de muestras es 21.
         /// </summary>
-        internal static string ComunicacionArduino_MensajeErrorMuestras_El_número_máximo_de_muestras_es_21 {
+        public static string ComunicacionArduino_MensajeErrorMuestras_El_número_máximo_de_muestras_es_21 {
             get {
                 return ResourceManager.GetString("ComunicacionArduino_MensajeErrorMuestras_El_número_máximo_de_muestras_es_21", resourceCulture);
             }
@@ -108,7 +128,7 @@ namespace SedimentTrap.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a No se pueden elegir mas muestras.
         /// </summary>
-        internal static string ComunicacionArduino_MensajeErrorMuestras_No_se_pueden_elegir_mas_muestras {
+        public static string ComunicacionArduino_MensajeErrorMuestras_No_se_pueden_elegir_mas_muestras {
             get {
                 return ResourceManager.GetString("ComunicacionArduino_MensajeErrorMuestras_No_se_pueden_elegir_mas_muestras", resourceCulture);
             }
@@ -117,7 +137,7 @@ namespace SedimentTrap.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a El número mínimo de muestras es cero.
         /// </summary>
-        internal static string ComunicacionArduino_MensajeErrorMuestrasCero_El_número_mínimo_de_muestras_es_cero {
+        public static string ComunicacionArduino_MensajeErrorMuestrasCero_El_número_mínimo_de_muestras_es_cero {
             get {
                 return ResourceManager.GetString("ComunicacionArduino_MensajeErrorMuestrasCero_El_número_mínimo_de_muestras_es_cero" +
                         "", resourceCulture);
@@ -127,7 +147,7 @@ namespace SedimentTrap.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Elija un número adecuado.
         /// </summary>
-        internal static string ComunicacionArduino_MensajeErrorMuestrasCero_Elija_un_número_adecuado {
+        public static string ComunicacionArduino_MensajeErrorMuestrasCero_Elija_un_número_adecuado {
             get {
                 return ResourceManager.GetString("ComunicacionArduino_MensajeErrorMuestrasCero_Elija_un_número_adecuado", resourceCulture);
             }
@@ -136,7 +156,7 @@ namespace SedimentTrap.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Elija un puerto adecuado.
         /// </summary>
-        internal static string ComunicacionArduino_MensajeErrorPuertoInvalido_Elija_un_puerto_adecuado {
+        public static string ComunicacionArduino_MensajeErrorPuertoInvalido_Elija_un_puerto_adecuado {
             get {
                 return ResourceManager.GetString("ComunicacionArduino_MensajeErrorPuertoInvalido_Elija_un_puerto_adecuado", resourceCulture);
             }
@@ -145,7 +165,7 @@ namespace SedimentTrap.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Puerto no válido.
         /// </summary>
-        internal static string ComunicacionArduino_MensajeErrorPuertoInvalido_Puerto_no_válido {
+        public static string ComunicacionArduino_MensajeErrorPuertoInvalido_Puerto_no_válido {
             get {
                 return ResourceManager.GetString("ComunicacionArduino_MensajeErrorPuertoInvalido_Puerto_no_válido", resourceCulture);
             }
@@ -154,7 +174,7 @@ namespace SedimentTrap.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Muestra .
         /// </summary>
-        internal static string ComunicacionArduino_NumeraMuestras_Muestra_ {
+        public static string ComunicacionArduino_NumeraMuestras_Muestra_ {
             get {
                 return ResourceManager.GetString("ComunicacionArduino_NumeraMuestras_Muestra_", resourceCulture);
             }
@@ -163,7 +183,7 @@ namespace SedimentTrap.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a El led está encendido.
         /// </summary>
-        internal static string ComunicacionArduino_ON_Click_El_led_está_encendido {
+        public static string ComunicacionArduino_ON_Click_El_led_está_encendido {
             get {
                 return ResourceManager.GetString("ComunicacionArduino_ON_Click_El_led_está_encendido", resourceCulture);
             }
@@ -172,7 +192,7 @@ namespace SedimentTrap.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap config {
+        public static System.Drawing.Bitmap config {
             get {
                 object obj = ResourceManager.GetObject("config", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -182,7 +202,7 @@ namespace SedimentTrap.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ic_adjust_black_48dp {
+        public static System.Drawing.Bitmap ic_adjust_black_48dp {
             get {
                 object obj = ResourceManager.GetObject("ic_adjust_black_48dp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -192,7 +212,7 @@ namespace SedimentTrap.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ic_error_red_48dp {
+        public static System.Drawing.Bitmap ic_error_red_48dp {
             get {
                 object obj = ResourceManager.GetObject("ic_error_red_48dp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -202,7 +222,7 @@ namespace SedimentTrap.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ic_error_red_48dp1 {
+        public static System.Drawing.Bitmap ic_error_red_48dp1 {
             get {
                 object obj = ResourceManager.GetObject("ic_error_red_48dp1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -212,7 +232,7 @@ namespace SedimentTrap.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ic_ok_48dp {
+        public static System.Drawing.Bitmap ic_ok_48dp {
             get {
                 object obj = ResourceManager.GetObject("ic_ok_48dp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -222,7 +242,7 @@ namespace SedimentTrap.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ic_warning_amber_48dp {
+        public static System.Drawing.Bitmap ic_warning_amber_48dp {
             get {
                 object obj = ResourceManager.GetObject("ic_warning_amber_48dp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -232,7 +252,7 @@ namespace SedimentTrap.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icml {
+        public static System.Drawing.Bitmap icml {
             get {
                 object obj = ResourceManager.GetObject("icml", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -242,7 +262,7 @@ namespace SedimentTrap.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap left10 {
+        public static System.Drawing.Bitmap left10 {
             get {
                 object obj = ResourceManager.GetObject("left10", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -252,7 +272,7 @@ namespace SedimentTrap.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap left20 {
+        public static System.Drawing.Bitmap left20 {
             get {
                 object obj = ResourceManager.GetObject("left20", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -260,9 +280,33 @@ namespace SedimentTrap.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Fechas de control de la trampa de sedimentos
+        ///
+        ///Instituto de Ciencias del Mar y Limnologia, UNAM
+        ///
+        ///Fecha de creacion del archivo: 
+        ///28/07/2016 09:26:25 p.m.
+        ///
+        ///Lista de fechas programadas en la trampa de sedimentos
+        ///1) 29/07/2016
+        ///2) 05/08/2016
+        ///3) 02/09/2016
+        ///4) 30/09/2016
+        ///5) 06/10/2016
+        ///6) 20/10/2016
+        ///7) 28/10/2016
+        ///.
+        /// </summary>
+        public static string logfile {
+            get {
+                return ResourceManager.GetString("logfile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap OFF {
+        public static System.Drawing.Bitmap OFF {
             get {
                 object obj = ResourceManager.GetObject("OFF", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -272,7 +316,17 @@ namespace SedimentTrap.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ON {
+        public static System.Drawing.Bitmap ok_png {
+            get {
+                object obj = ResourceManager.GetObject("ok_png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap ON {
             get {
                 object obj = ResourceManager.GetObject("ON", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -282,7 +336,7 @@ namespace SedimentTrap.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap right10 {
+        public static System.Drawing.Bitmap right10 {
             get {
                 object obj = ResourceManager.GetObject("right10", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -292,10 +346,38 @@ namespace SedimentTrap.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap right20 {
+        public static System.Drawing.Bitmap right20 {
             get {
                 object obj = ResourceManager.GetObject("right20", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Stop01 {
+            get {
+                object obj = ResourceManager.GetObject("Stop01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a  Revise la cantidad de muestras que quiere almacer.
+        /// </summary>
+        public static string txt_revise_fechas {
+            get {
+                return ResourceManager.GetString("txt_revise_fechas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error al almacenar las fechas.
+        /// </summary>
+        public static string txt_title_error_fechas {
+            get {
+                return ResourceManager.GetString("txt_title_error_fechas", resourceCulture);
             }
         }
     }
