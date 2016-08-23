@@ -1,0 +1,8 @@
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\AlarmaArduino\ejemploDataGrid\ejemploDataGrid\bin\Debug\ejemploDataGrid.exe.config
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\AlarmaArduino\ejemploDataGrid\ejemploDataGrid\obj\Debug\ejemploDataGrid.Form1.resources
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\AlarmaArduino\ejemploDataGrid\ejemploDataGrid\obj\Debug\ejemploDataGrid.Properties.Resources.resources
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\AlarmaArduino\ejemploDataGrid\ejemploDataGrid\obj\Debug\ejemploDataGrid.csproj.GenerateResource.Cache
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\AlarmaArduino\ejemploDataGrid\ejemploDataGrid\bin\Debug\ejemploDataGrid.exe
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\AlarmaArduino\ejemploDataGrid\ejemploDataGrid\bin\Debug\ejemploDataGrid.pdb
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\AlarmaArduino\ejemploDataGrid\ejemploDataGrid\obj\Debug\ejemploDataGrid.exe
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\AlarmaArduino\ejemploDataGrid\ejemploDataGrid\obj\Debug\ejemploDataGrid.pdb

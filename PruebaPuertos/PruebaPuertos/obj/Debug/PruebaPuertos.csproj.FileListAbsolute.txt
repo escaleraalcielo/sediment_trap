@@ -1,0 +1,6 @@
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\AlarmaArduino\PruebaPuertos\PruebaPuertos\bin\Debug\PruebaPuertos.exe.config
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\AlarmaArduino\PruebaPuertos\PruebaPuertos\bin\Debug\PruebaPuertos.exe
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\AlarmaArduino\PruebaPuertos\PruebaPuertos\bin\Debug\PruebaPuertos.pdb
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\AlarmaArduino\PruebaPuertos\PruebaPuertos\obj\Debug\PruebaPuertos.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\AlarmaArduino\PruebaPuertos\PruebaPuertos\obj\Debug\PruebaPuertos.exe
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\AlarmaArduino\PruebaPuertos\PruebaPuertos\obj\Debug\PruebaPuertos.pdb
